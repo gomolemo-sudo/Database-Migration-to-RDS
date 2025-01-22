@@ -18,7 +18,8 @@ The current café application runs on an EC2 instance named CafeServer. Before m
 ## Step 3: Exporting Data from the Old Database
 To migrate the database, we first need to confirm the existing setup on the EC2 instance. Use the command line to check the status of the MariaDB service and connect to the database using the root credentials. You can retrieve the database password from the Parameter Store entry named /cafe/dbPassword. Once connected, use SQL commands to explore the existing tables and data. To prepare for the migration, use mysqldump to export the entire database into a file called CafeDbDump.sql. This file will serve as our backup for importing into the new RDS instance.
 
-![image](https://github.com/user-attachments/assets/4eb33db8-e405-421c-a342-dd385c6b690b)
+![image](https://github.com/user-attachments/assets/3e31e781-cbeb-4ebd-89bc-848821c58cb6)
+
 
 ![image](https://github.com/user-attachments/assets/09ee0b4f-3fb9-4142-a369-d738ce8a7b3b)
 
