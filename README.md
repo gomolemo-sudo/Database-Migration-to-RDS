@@ -11,13 +11,15 @@ To begin, we'll set up a new RDS instance using the MariaDB engine. We'll choose
 
 ## Step 2: Analyzing the Existing Café Application Deployment
 The current café application runs on an EC2 instance named CafeServer. Before making changes, let's access the application to verify its current functionality. Open a browser and visit http://<public-ip-address>/cafe to check the Menu and Order History pages. To securely connect to the EC2 instance, use AWS Systems Manager Session Manager, which eliminates the need for SSH keys. After starting a session, ensure you're logged in as ec2-user to access the necessary files and configurations.
+
 ![image](https://github.com/user-attachments/assets/d16039cf-c6a7-47dd-9615-268c9df2250c)
 
 
 ## Step 3: Exporting Data from the Old Database
 To migrate the database, we first need to confirm the existing setup on the EC2 instance. Use the command line to check the status of the MariaDB service and connect to the database using the root credentials. You can retrieve the database password from the Parameter Store entry named /cafe/dbPassword. Once connected, use SQL commands to explore the existing tables and data. To prepare for the migration, use mysqldump to export the entire database into a file called CafeDbDump.sql. This file will serve as our backup for importing into the new RDS instance.
 
-![image](https://github.com/user-attachments/assets/92801e32-3597-4cda-8af8-10b5962ff371)
+![image](https://github.com/user-attachments/assets/4eb33db8-e405-421c-a342-dd385c6b690b)
+
 ![image](https://github.com/user-attachments/assets/09ee0b4f-3fb9-4142-a369-d738ce8a7b3b)
 
 
